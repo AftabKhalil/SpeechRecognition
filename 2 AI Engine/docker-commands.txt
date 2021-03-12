@@ -1,0 +1,5 @@
+#To build the AI engine image
+docker build -t engine .
+
+#To create and run a docker container from above image on port 8090
+docker run -d --name model_container -p 8090:80 engine
