@@ -105,6 +105,7 @@ def upload_file_api(audio: UploadFile = File(...)):
 @app.get("/predict/")
 def predict_api():
 	try:
+		import librosa
 		audio, sample_rate = librosa.load('app/predict.wav', sr = 16000)
 		prediction = predict_audio(audio, sample_rate)
 		return {"message": prediction}
